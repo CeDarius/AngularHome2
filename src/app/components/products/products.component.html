@@ -1,0 +1,27 @@
+
+
+<div class="card text-center" style="width: 1200px;">
+  <div style="color: coral">{{errorMsg}}</div>
+
+  <table *ngIf="books && books.length" class="table table-bordered">
+    <thead>
+    <tr>
+      <th scope="col">Author</th>
+      <th scope="col">Title</th>
+      <th scope="col">Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor='let book of books'>
+      <td scope="row">{{ book.author }}</td>
+      <td >{{ book.title }}</td>
+      <td >{{ book.price | number:'1.2-2' | currency: 'EUR' }}</td>  <!-- pipe to convert number to two decimal places -->
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!--<input type="text" [(ngModel)]="inputText">-->
+<!--<div>{{inputText}}&#160;</div>-->
+<!--<input type="text" [(ngModel)]="inputText">-->
